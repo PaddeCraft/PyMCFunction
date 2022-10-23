@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pymcfunction"
-version = "0.1.3"
+version = "0.1.4"
 description = "PyMCFunction is a tool to write Minecraft datapacks in Python."
 authors = ["PaddeCraft <paddecraft@gmail.com>"]
 include = [
