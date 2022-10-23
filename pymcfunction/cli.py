@@ -127,30 +127,38 @@ def compile():
 
             lines = []
             imports = ""
-            for x in statements:
-                if x.split(" ")[0] in ["import", "from"]:
-                    imports += x + "\n"
-                    statements.remove(x)
-                elif x == "##pymcfunction-tick":
+            removelist = []
+            for s in statements:
+                if s.split(" ")[0] in ["import", "from"]:
+                    imports += s + "\n"
+                    removelist.append(s)
+                if s == "##pymcfunction-tick":
                     specialFunctions["tick"].append(
                         config["namespace"] + ":" + f.removesuffix(".py")
                     )
-                elif x == "##pymcfunction-load":
+                elif s == "##pymcfunction-load":
                     specialFunctions["load"].append(
                         config["namespace"] + ":" + f.removesuffix(".py")
                     )
-                if len(x) > 0:
-                    if x[0] == "#":
-                        statements.remove(x)
+                if len(s) > 0:
+                    if s[0] == "#":
+                        removelist.append(s)
+
+            # Yes, this is needed because of weird python behaviour
+            for r in removelist:
+                statements.remove(r)
 
             for s in statements:
+                code = imports + "\n_output = " + s + "\nprint(_output)"
                 try:
                     stdout = StringIO()
                     with redirect_stdout(stdout):
-                        exec(imports + "\n_output = " + s + "\nprint(_output)")
+                        exec(code)
                     lines.append(stdout.getvalue().strip("\n"))
-                except Exception:
-                    print(f"\nError while compiling {f}!")
+                except Exception as e:
+                    print("\n" + str(e) + "\n\nCode used:\n" + code)
+                    print(f"\n\nError while compiling {f}!")
+                    print(statements)
                     raise typer.Abort()
             # Write to file
             Path(os.path.split(out)[0]).mkdir(parents=True, exist_ok=True)

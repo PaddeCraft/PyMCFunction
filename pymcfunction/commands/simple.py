@@ -1,7 +1,7 @@
 from pymcfunction.types import Gamemode, Weather
 
 
-def say(msg):
+def say(msg: str):
     return "say " + str(msg)
 
 
@@ -100,5 +100,6 @@ def pardon(player: str):
 def pardon_ip(ip: str):
     return "pardon " + ip
 
-def teammsg(msg:str):
+
+def teammsg(msg: str):
     return "teammsg " + msg
