@@ -149,7 +149,12 @@ def compile():
                 statements.remove(r)
 
             for s in statements:
-                code = imports + "\n_output = " + s + "\nprint(_output)"
+                code = (
+                    imports
+                    + "\n_output = "
+                    + s
+                    + "\nif type(_output) == str: print(_output)"
+                )
                 try:
                     stdout = StringIO()
                     with redirect_stdout(stdout):

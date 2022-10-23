@@ -189,3 +189,39 @@ class Weather(Enum):
 class ContainerType(Enum):
     ENTITY = "entity"
     BLOCK = "block"
+
+
+class BanListType(Enum):
+    PLAYERS = "players"
+    IPS = "ips"
+
+
+class BossbarGetType(Enum):
+    MAX = "max"
+    PLAYERS = "players"
+    VALUE = "value"
+    VISIBLE = "visible"
+
+
+class BossbarColor(Enum):
+    BLUE = "blue"
+    GREEN = "green"
+    PINK = "pink"
+    PURPLE = "purple"
+    RED = "red"
+    WHITE = "white"
+    YELLOW = "yellow"
+
+
+class BossbarStyle(Enum):
+    NOTCHED6 = "notched_6"
+    NOTCHED10 = "notched_10"
+    NOTCHED12 = "notched_12"
+    NOTCHED20 = "notched_20"
+    PROGRESS = "progress"
+
+class Difficultiy(Enum):
+    PEACEFUL = "peaceful"
+    EASY = "easy"
+    NORMAL = "normal"
+    HARD = "hard"

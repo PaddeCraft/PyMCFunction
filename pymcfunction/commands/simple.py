@@ -1,4 +1,6 @@
-from pymcfunction.types import Gamemode, Weather
+from types import NoneType
+from pymcfunction.types import BanListType, Difficultiy, Gamemode, Weather
+from pymcfunction.util import _dictToMcKeyVal
 
 
 def say(msg: str):
@@ -103,3 +105,32 @@ def pardon_ip(ip: str):
 
 def teammsg(msg: str):
     return "teammsg " + msg
+
+
+def banlist(_type: BanListType):
+    return "banlist " + _type.value
+
+
+def summon(entity: str, pos: str = "~ ~ ~", nbt: dict | str = None):
+    return f"summon {entity} {pos}" + (
+        ((" " + (_dictToMcKeyVal(nbt)) if type(nbt) == dict else nbt)) if nbt else ""
+    )
+
+
+def stopsound(target: str, source: str = None, sound: str = None):
+    return f"stopsound {target}" + (
+        (" " + (source + ((" " + sound) if sound else ""))) if source else ""
+    )
+
+
+def spectate(target: str | NoneType, spectator: str = "@s"):
+    if target:
+        return f"spectate {target} {spectator}"
+    return "spectate"
+
+
+def spawnpoint(target: str, coord: str = "~ ~ ~", yaw: float = None):
+    return f"spawnpoint {target} {coord}" + ((" " + yaw) if yaw else "")
+
+def difficulty(_difficulty:Difficultiy):
+    return "difficulty " + _difficulty.value

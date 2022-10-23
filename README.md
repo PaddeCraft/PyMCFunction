@@ -18,8 +18,8 @@ These are the currently supported commands. Feel free to create a PR, the goal i
  - [ ] /attribute
  - [x] /ban
  - [x] /ban-ip
- - [ ] /banlist
- - [ ] /bossbar
+ - [x] /banlist
+ - [x] /bossbar
  - [x] /clear
  - [ ] /clone
  - [ ] /data
@@ -27,7 +27,7 @@ These are the currently supported commands. Feel free to create a PR, the goal i
  - [ ] /debug
  - [x] /defaultgamemode
  - [x] /deop
- - [ ] /difficultiy
+ - [x] /difficulty
  - [ ] /effect
  - [ ] /enchant
  - [x] /execute
@@ -61,12 +61,12 @@ These are the currently supported commands. Feel free to create a PR, the goal i
  - [ ] /setblock
  - [x] /setidletimeout
  - [x] /setworldspawn
- - [ ] /spawnpoint
- - [ ] /spectate
+ - [x] /spawnpoint
+ - [x] /spectate
  - [ ] /spreadplayers
  - [x] /stop
- - [ ] /stopsound
- - [ ] /summon
+ - [x] /stopsound
+ - [x] /summon
  - [x] /tag
  - [x] /team
  - [x] /teammsg (/tm)
