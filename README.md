@@ -1,10 +1,10 @@
-# PyFunction
+# PyMCFunction
 
 PyMCFunction is a tool to write Minecraft datapacks in Python.
 
 ## Usage
 
-Check pymcfunction/pyfunction/pmf --help
+Check `pymcfunction/pyfunction/pmf --help`
 
 ## Docs
 
