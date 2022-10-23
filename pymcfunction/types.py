@@ -220,6 +220,7 @@ class BossbarStyle(Enum):
     NOTCHED20 = "notched_20"
     PROGRESS = "progress"
 
+
 class Difficultiy(Enum):
     PEACEFUL = "peaceful"
     EASY = "easy"

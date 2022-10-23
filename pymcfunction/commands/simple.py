@@ -132,5 +132,6 @@ def spectate(target: str | NoneType, spectator: str = "@s"):
 def spawnpoint(target: str, coord: str = "~ ~ ~", yaw: float = None):
     return f"spawnpoint {target} {coord}" + ((" " + yaw) if yaw else "")
 
-def difficulty(_difficulty:Difficultiy):
+
+def difficulty(_difficulty: Difficultiy):
     return "difficulty " + _difficulty.value
