@@ -187,7 +187,7 @@ def publish():
         filetypes=files,
         defaultextension=files,
         title="Save packaged datapack...",
-        confirmoverwrite = True,
+        confirmoverwrite=True,
         initialfile=f'{config["compiled_folder_name"]}-{int(time.time())}.zip',
     )
     print(file)
@@ -198,5 +198,6 @@ def publish():
     print("\nMaking archive...")
     shutil.make_archive(file, "zip", outFolder)
     print("Created archive!")
+
 
 app()

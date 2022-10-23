@@ -15,7 +15,7 @@ class Scoreboard:
     def setdisplay(self, slot: str):
         return f"scoreboard objectives setdisplay {slot} {self.name}"
 
-    def modifyDisplayName(self, displayNameJsonComponent: str|dict):
+    def modifyDisplayName(self, displayNameJsonComponent: str | dict):
         return f"scoreboard objectives modify {self.name} displayname {displayNameJsonComponent}"
 
     def modifyRendertype(self, rendertype: ScoreboardRenderType):

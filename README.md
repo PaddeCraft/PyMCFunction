@@ -16,8 +16,8 @@ These are the currently supported commands. Feel free to create a PR, the goal i
 
  - [ ] /advancement
  - [ ] /attribute
- - [ ] /ban
- - [ ] /ban-ip
+ - [x] /ban
+ - [x] /ban-ip
  - [ ] /banlist
  - [ ] /bossbar
  - [x] /clear
@@ -35,48 +35,47 @@ These are the currently supported commands. Feel free to create a PR, the goal i
  - [ ] /fill
  - [ ] /forceload
  - [x] /function
- - [ ] /gamemode
- - [ ] /gamerule
- - [ ] /give
- - [ ] /item
- - [ ] /kick
- - [ ] /kill
+ - [x] /gamemode
+ - [x] /gamerule
+ - [x] /give
+ - [x] /item
+ - [x] /kick
+ - [x] /kill
  - [ ] /locate
  - [ ] /loot
- - [ ] /msg (/tell and /w)
- - [ ] /op
- - [ ] /pardon
- - [ ] /pardon-ip
+ - [x] /op
+ - [x] /pardon
+ - [x] /pardon-ip
  - [ ] /particle
  - [ ] /place
  - [ ] /playsound
  - [ ] /publish
  - [ ] /recipe
- - [ ] /save-all
- - [ ] /save-off
- - [ ] /save-on
+ - [x] /save-all
+ - [x] /save-off
+ - [x] /save-on
  - [x] /say
  - [ ] /schedule
  - [x] /scoreboard
- - [ ] /seed
+ - [x] /seed
  - [ ] /setblock
- - [ ] /setidletimeout
- - [ ] /setworldspawn
+ - [x] /setidletimeout
+ - [x] /setworldspawn
  - [ ] /spawnpoint
  - [ ] /spectate
  - [ ] /spreadplayers
- - [ ] /stop
+ - [x] /stop
  - [ ] /stopsound
  - [ ] /summon
- - [ ] /tag
- - [ ] /team
- - [ ] /teammsg (/tm)
- - [ ] /teleport (/tp)
+ - [x] /tag
+ - [x] /team
+ - [x] /teammsg (/tm)
+ - [x] /teleport (/tp)
  - [ ] /tellraw
  - [ ] /time
  - [ ] /title
  - [ ] /trigger
- - [ ] /weather
+ - [x] /weather
  - [ ] /whitelist
  - [ ] /worldborder
 

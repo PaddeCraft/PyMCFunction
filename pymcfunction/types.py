@@ -178,3 +178,14 @@ class StoreBossbarPosition(Enum):
 class ScoreboardRenderType(Enum):
     HEARTS = "hearts"
     INTEGER = "integer"
+
+
+class Weather(Enum):
+    CLEAR = "clear"
+    RAIN = "rain"
+    THUNDER = "thunder"
+
+
+class ContainerType(Enum):
+    ENTITY = "entity"
+    BLOCK = "block"
