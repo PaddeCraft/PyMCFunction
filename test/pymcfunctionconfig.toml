@@ -1,0 +1,7 @@
+namespace = "testdp"
+compiled_folder_name = "testdpfolder"
+description = "Test datapack"
+datapack_folder = "/run/media/paddecraft/4EE0F299E0F2870D/Dev/PythonScripting/pyfunction/test"
+pack_version = 10
+
+[includes]
