@@ -1,4 +1,4 @@
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 
 from .util import *
 
@@ -11,3 +11,11 @@ from .commands.teleport import teleport
 from .commands.scoreboard import Scoreboard
 
 from .commands.simple import *
+
+
+# Aliases
+sb = Scoreboard
+exec = execute
+gm = gamemode
+tp = teleport
+bb = bossbar
