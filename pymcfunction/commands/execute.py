@@ -14,8 +14,8 @@ class execute:
         self.currentQuery += f"at {target} "
         return self
 
-    def ifBlock(self, coord: str, block: str):
-        self.currentQuery += f"if block {coord} {block} "
+    def ifBlock(self, coord: str, block: Block):
+        self.currentQuery += f"if block {coord} {block.value} "
         return self
 
     def ifBlocks(self, coord1: str, coord2: str, matchcoord: str, masked: bool = True):
@@ -50,8 +50,8 @@ class execute:
         self.currentQuery += f"if score {selector1} {scoreboard1.name} {operator} {selector2} {scoreboard2.name} "
         return self
 
-    def unlessBlock(self, coord: str, block: str):
-        self.currentQuery += f"unless block {coord} {block} "
+    def unlessBlock(self, coord: str, block: Block):
+        self.currentQuery += f"unless block {coord} {block.value} "
         return self
 
     def unlessBlocks(

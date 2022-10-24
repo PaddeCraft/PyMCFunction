@@ -1,4 +1,6 @@
 from pymcfunction.types import ContainerType
+from pymcfunction.update_specific_types.block import Block
+from pymcfunction.update_specific_types.item import Item
 
 
 class item:
@@ -11,11 +13,11 @@ class item:
     def modifyBlock(self, coord: str, slot: str, modifier: str):
         return f"item modify block {coord} {slot} {modifier}"
 
-    def replaceEntity(self, target: str, slot: str, item: str, count: int = 1):
-        return f"item replace entity {target} {slot} with {item} {count}"
+    def replaceEntity(self, target: str, slot: str, item: Item | Block, count: int = 1):
+        return f"item replace entity {target} {slot} with {item.vale} {count}"
 
-    def replaceBlock(self, coord: str, slot: str, item: str, count: int = 1):
-        return f"item replace block {coord} {slot} with {item} {count}"
+    def replaceBlock(self, coord: str, slot: str, item: Item | Block, count: int = 1):
+        return f"item replace block {coord} {slot} with {item.value} {count}"
 
     def copy(
         self,

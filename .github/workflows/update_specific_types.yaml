@@ -1,0 +1,48 @@
+on:
+    schedule:
+        - cron: "0 0 * * *"
+
+jobs:
+    update:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: "1"
+            - name: Setup Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: "3.10"
+            - name: Install and configure Poetry
+              uses: snok/install-poetry@v1
+            - name: Install dependencies
+              run: "poetry install"
+            - name: Run script
+              id: script
+              run: "poetry run python tools/update_specific_types.py"
+            - name: Push
+              if: ${{ steps.script.outputs.release }} == true
+              uses: stefanzweifel/git-auto-commit-action@v4
+            - name: "Get Previous tag"
+              if: ${{ steps.script.outputs.release }} == true
+              id: previoustag
+              uses: "WyriHaximus/github-action-get-previous-tag@v1"
+            - name: "Get next minor version"
+              if: ${{ steps.script.outputs.release }} == true
+              id: semvers
+              uses: "WyriHaximus/github-action-next-semvers@v1"
+              with:
+                  version: ${{ steps.previoustag.outputs.tag }}
+            - name: Create Release
+              if: ${{ steps.script.outputs.release }} == true
+              id: create_release
+              uses: actions/create-release@latest
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                  tag_name: ${{ steps.semvers.outputs.patch }}
+                  release_name: Release ${{ github.ref }}
+                  body: "This automated release was created, because there are new things in Minecraft."
+                  draft: false
+                  prerelease: false

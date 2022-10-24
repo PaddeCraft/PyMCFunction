@@ -1,5 +1,8 @@
 from types import NoneType
 from pymcfunction.types import BanListType, Difficultiy, Gamemode, Weather
+from pymcfunction.update_specific_types.block import Block
+from pymcfunction.update_specific_types.entity import Entity
+from pymcfunction.update_specific_types.item import Item
 from pymcfunction.util import _dictToMcKeyVal
 
 
@@ -52,8 +55,8 @@ def setidletimeout(minutes: int):
     return "setidletimeout " + str(minutes)
 
 
-def give(target: str, item: str, count: int = 1):
-    return f"give {target} {count}"
+def give(target: str, item: Item | Block, count: int = 1):
+    return f"give {target} {item.value} {count}"
 
 
 def kill(target: str):
@@ -111,8 +114,8 @@ def banlist(_type: BanListType):
     return "banlist " + _type.value
 
 
-def summon(entity: str, pos: str = "~ ~ ~", nbt: dict | str = None):
-    return f"summon {entity} {pos}" + (
+def summon(entity: Entity, pos: str = "~ ~ ~", nbt: dict | str = None):
+    return f"summon {entity.value} {pos}" + (
         ((" " + (_dictToMcKeyVal(nbt)) if type(nbt) == dict else nbt)) if nbt else ""
     )
 
