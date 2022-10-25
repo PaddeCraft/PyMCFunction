@@ -22,27 +22,17 @@ jobs:
               id: script
               run: "poetry run python tools/update_specific_types.py"
             - name: Push
-              if: ${{ steps.script.outputs.release }} == true
+              if: ${{ steps.script.outputs.release }} == "true"
               uses: stefanzweifel/git-auto-commit-action@v4
-            - name: "Get Previous tag"
-              if: ${{ steps.script.outputs.release }} == true
-              id: previoustag
-              uses: "WyriHaximus/github-action-get-previous-tag@v1"
-            - name: "Get next minor version"
-              if: ${{ steps.script.outputs.release }} == true
-              id: semvers
-              uses: "WyriHaximus/github-action-next-semvers@v1"
-              with:
-                  version: ${{ steps.previoustag.outputs.tag }}
             - name: Create Release
-              if: ${{ steps.script.outputs.release }} == true
+              if: ${{ steps.script.outputs.release }} == "true"
               id: create_release
               uses: actions/create-release@latest
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                  tag_name: ${{ steps.semvers.outputs.patch }}
+                  tag_name: ${{ steps.script.outputs.tag }}
                   release_name: Release ${{ github.ref }}
-                  body: "This automated release was created, because there are new things in Minecraft."
+                  body: "Added support for Minecraft ${{ steps.script.outputs.mcver }}"
                   draft: false
                   prerelease: false

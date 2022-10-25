@@ -130,6 +130,24 @@ for f in ["advancement.py", "block.py", "entity.py", "item.py", "effect.py"]:
     if not hash(basePath + f) in hashes:
         newReleaseRequired = True
 
-print("Done.")
+os.system(
+    f'echo "release={("true" if newReleaseRequired else "false")}" >> $GITHUB_OUTPUT'
+)
 
-print("::set-output name=release::" + ("true" if newReleaseRequired else "false"))
+if newReleaseRequired:
+    print("There will be a new release.")
+    print("Getting current tag...")
+    tag = requests.get(
+        "https://api.github.com/repos/PaddeCraft/PyMCFunction/tags"
+    ).json()[0]["name"]
+    print("Calculating new tag...")
+    patch = int(tag.split(".")[2]) + 1
+    newTagParts = tag.split(".")
+    newTagParts[2] = str(patch)
+    newTag = ".".join(newTagParts)
+
+    print("New release tag:", newTag)
+    os.system(f'echo "tag={newTag}" >> $GITHUB_OUTPUT')
+    os.system(f'echo "mcver={latestVersion}" >> $GITHUB_OUTPUT')
+
+print("Done.")
