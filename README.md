@@ -1,3 +1,5 @@
+[![.github/workflows/update_specific_types.yaml](https://github.com/PaddeCraft/PyMCFunction/actions/workflows/update_specific_types.yaml/badge.svg)](https://github.com/PaddeCraft/PyMCFunction/actions/workflows/update_specific_types.yaml)
+
 # PyMCFunction
 
 PyMCFunction is a tool to write Minecraft datapacks in Python.
