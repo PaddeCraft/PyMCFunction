@@ -1,4 +1,8 @@
 [![.github/workflows/update_specific_types.yaml](https://github.com/PaddeCraft/PyMCFunction/actions/workflows/update_specific_types.yaml/badge.svg)](https://github.com/PaddeCraft/PyMCFunction/actions/workflows/update_specific_types.yaml)
+[![PyPI](https://img.shields.io/pypi/v/pymcfunction)](https://pypi.org/project/pymcfunction/)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/PaddeCraft/PyMCFunction?include_prereleases&label=github)](https://github.com/PaddeCraft/PyMCFunction/)
+![GitHub repo size](https://img.shields.io/github/repo-size/PaddeCraft/PyMCFunction)
+[![GitHub issues](https://img.shields.io/github/issues/PaddeCraft/PyMCFunction)](https://github.com/PaddeCraft/PyMCFunction/issues)
 
 # PyMCFunction
 
