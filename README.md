@@ -34,10 +34,10 @@ These are the currently supported commands. Feel free to create a PR, the goal i
  - [x] /defaultgamemode
  - [x] /deop
  - [x] /difficulty
- - [ ] /effect
+ - [x] /effect
  - [ ] /enchant
  - [x] /execute
- - [ ] /experience (/xp)
+ - [x] /experience (/xp)
  - [ ] /fill
  - [ ] /forceload
  - [x] /function
@@ -78,7 +78,7 @@ These are the currently supported commands. Feel free to create a PR, the goal i
  - [x] /teammsg (/tm)
  - [x] /teleport (/tp)
  - [ ] /tellraw
- - [ ] /time
+ - [x] /time
  - [ ] /title
  - [ ] /trigger
  - [x] /weather

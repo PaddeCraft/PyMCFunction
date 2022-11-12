@@ -211,6 +211,3 @@ def publish():
     print("\nMaking archive...")
     shutil.make_archive(file, "zip", outFolder)
     print("Created archive!")
-
-
-app()

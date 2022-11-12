@@ -111,3 +111,21 @@ class Difficultiy(Enum):
     EASY = "easy"
     NORMAL = "normal"
     HARD = "hard"
+
+
+class ExperienceUnit(Enum):
+    LEVELS = "levels"
+    POINTS = "points"
+
+
+class TimeQueryType(Enum):
+    DAYTIME = "daytime"
+    GAMETIME = "gametime"
+    DAY = "day"
+
+
+class TimePreset(Enum):
+    DAY = "day"
+    NIGHT = "night"
+    NOON = "noon"
+    MIDNIGHT = "midnight"
