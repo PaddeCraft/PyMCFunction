@@ -22,10 +22,10 @@ jobs:
               id: script
               run: "poetry run python tools/update_specific_types.py"
             - name: Push
-              if: ${{ steps.script.outputs.release }} == "true"
+              if: ${{ steps.script.outputs.release }} == true
               uses: stefanzweifel/git-auto-commit-action@v4
             - name: Create Release
-              if: ${{ steps.script.outputs.release }} == "true"
+              if: ${{ steps.script.outputs.release }} == true
               id: create_release
               uses: actions/create-release@latest
               env:
