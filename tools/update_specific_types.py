@@ -10,6 +10,12 @@ basePath = "pymcfunction/update_specific_types/"
 newReleaseRequired = False
 
 
+def set_output(key, value):
+    # https://github.com/orgs/community/discussions/28146#discussioncomment-4110404
+    with open(os.environ["GITHUB_OUTPUT"], "a") as fh:
+        print(f"{key}={value}", file=fh)
+
+
 def hash(pth):
     md5 = hashlib.md5()
     with open(pth, "rb") as fl:
@@ -130,9 +136,7 @@ for f in ["advancement.py", "block.py", "entity.py", "item.py", "effect.py"]:
     if not hash(basePath + f) in hashes:
         newReleaseRequired = True
 
-os.system(
-    f'echo "release={("true" if newReleaseRequired else "false")}" >> $GITHUB_OUTPUT'
-)
+set_output("release", "true" if newReleaseRequired else "false")
 
 if newReleaseRequired:
     print("There will be a new release.")
@@ -147,7 +151,8 @@ if newReleaseRequired:
     newTag = ".".join(newTagParts)
 
     print("New release tag:", newTag)
-    os.system(f'echo "tag={newTag}" >> $GITHUB_OUTPUT')
-    os.system(f'echo "mcver={latestVersion}" >> $GITHUB_OUTPUT')
+
+    set_output("tag", newTag)
+    set_output("mcver", latestVersion)
 
 print("Done.")
