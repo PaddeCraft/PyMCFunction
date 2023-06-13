@@ -30,6 +30,12 @@ jobs:
             new_tag: ${{ steps.script.outputs.tag }}
             mv_ver: ${{ steps.script.outputs.mcver }}
 
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: debug
+              run: "echo ${{ needs.update.outputs.publish }}"
+
     publish:
         runs-on: ubuntu-latest
         needs:
