@@ -26,7 +26,7 @@ jobs:
               id: script
               run: "poetry run python tools/update_specific_types.py"
             - name: More debug
-              run: "echo ${{ steps.script.outputs }}"
+              run: "echo ${{ steps.script.outputs.release }}"
         outputs:
             publish: ${{ steps.script.outputs.release }}
             new_tag: ${{ steps.script.outputs.tag }}
